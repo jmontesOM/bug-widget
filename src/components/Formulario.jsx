@@ -118,7 +118,7 @@ export default function Formulario() {
 
     {/* Nombre del archivo */}
     {imageName && (
-      <p className="text-xs text-gray-600">
+      <p className="text-xs text-gray-600 text-left mt-2">
         Archivo seleccionado: <span className="font-medium">{imageName}</span>
       </p>
     )}
