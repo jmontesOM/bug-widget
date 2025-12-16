@@ -7,21 +7,22 @@ function App() {
 
   return (
     <>
-      {/* Botón flotante */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="focus:outline-none fixed bottom-5 right-5 px-4 py-3 rounded-full bg-blue-600 text-white text-lg font-semibold flex items-center justify-center shadow-lg z-50"
-      >
-        {open ? "×" : "Reportar incidencia"}
-      </button>
-
-      {/* Formulario desplegable */}
+    {/* Formulario desplegable */}
       {open && (
-        <div className="widget-container fixed bottom-24 right-5 w-80 max-h-[80vh] overflow-auto bg-white rounded-xl shadow-2xl z-40 animate-fadeIn">
+        <div className="widget-container bottom-24 w-80 max-h-[80vh] overflow-auto bg-white rounded-xl shadow-2xl z-40 animate-fadeIn">
           <Formulario />
         </div>
       )}
 
+      {/* Botón flotante */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="focus:outline-none bottom-5  px-4 py-3 rounded-full bg-blue-600 text-white text-lg font-semibold flex items-center justify-center shadow-lg z-50"
+      >
+        {open ? "×" : "Reportar incidencia"}
+      </button>
+
+      
       <style>
         {`
           @keyframes fadeIn {

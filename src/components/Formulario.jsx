@@ -146,6 +146,7 @@ export default function Formulario() {
         transition
         mt-6
         w-fit
+        right-0
       "
     >
       {loading ? "Enviando..." : "Enviar"}
