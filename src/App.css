@@ -56,3 +56,8 @@ form{
     bottom: unset;
 
 }
+@media (prefers-color-scheme: dark) {
+  body, html, #root {
+    background-color: transparent !important;
+  }
+}
