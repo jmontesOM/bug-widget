@@ -81,7 +81,7 @@ export default function Formulario({ onSuccess }) {
           <textarea
             placeholder="Describe la incidencia..."
             value={description}
-            required
+            required 
             onChange={(e) => setDescription(e.target.value)}
             className="
               w-full
