@@ -10,6 +10,8 @@ export default function Formulario() {
   const [imageName, setImageName] = useState("");
   const [urgent, setUrgent] = useState(false);
 
+  const API_BASE = import.meta.env.VITE_API_BASE || "";
+
   // Manejar selección de imagen y generar previsualización
   const handleImageChange = (e) => {
   const file = e.target.files[0];
@@ -46,7 +48,7 @@ export default function Formulario() {
       console.log("Body que se enviará a Netlify:", body);
 
       // Llamada a Netlify Function
-      const res = await fetch("/.netlify/functions/createTask", {
+      const res = await fetch(`${API_BASE}/api/createTask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
