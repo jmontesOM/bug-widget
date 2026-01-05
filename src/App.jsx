@@ -27,7 +27,7 @@ function App() {
 
       {/* Mensaje de éxito fuera del formulario */}
       {successMessage && (
-        <p className="text-green-600 mt-2 text-right relative top-[240px]">{successMessage}</p>
+        <p className="success-message text-green-600 mt-2 text-right relative top-[240px]">{successMessage}</p>
       )}
 
       {/* Botón flotante */}
