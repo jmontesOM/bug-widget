@@ -1,18 +1,19 @@
-#root, body, html {
-  width:280px;
-  min-height:unset;
-  height:335px;
-  position:relative;
+#root,
+body,
+html {
+  width: 280px;
+  min-height: unset;
+  position: relative;
   max-width: unset;
-  min-width:unset;
-  display:block;
-  min-width:280px!important;
-  margin:unset!important;
-  max-width:280px;
-  background-color:transparent!important;
+  min-width: unset;
+  display: block;
+  min-width: 280px !important;
+  margin: unset !important;
+  max-width: 280px;
+  background-color: transparent !important;
 }
-form{
-  max-width:280px;
+form {
+  max-width: 280px;
 }
 .logo {
   height: 6em;
@@ -49,15 +50,16 @@ form{
 .read-the-docs {
   color: #888;
 }
-#root > button{
-    position: absolute;
-    top: 290px;
-    right: 0;
-    bottom: unset;
-
+#root > button {
+  position: absolute;
+  top: 290px;
+  right: 0;
+  bottom: unset;
 }
 @media (prefers-color-scheme: dark) {
-  body, html, #root {
+  body,
+  html,
+  #root {
     background-color: transparent !important;
   }
 }
