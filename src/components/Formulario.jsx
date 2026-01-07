@@ -4,7 +4,7 @@ export default function Formulario({ onSuccess }) {
   const [loading, setLoading] = useState(false);
   const [description, setDescription] = useState("");
   const [imageFile, setImageFile] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  //const [imagePreview, setImagePreview] = useState(null);
   const [error, setError] = useState(null);
   const [imageName, setImageName] = useState("");
   const [urgent, setUrgent] = useState(false);
@@ -38,7 +38,12 @@ export default function Formulario({ onSuccess }) {
         });
       }
 
-      const body = { description, imageBase64, imageName: imageNameLocal, urgent };
+      const body = {
+        description,
+        imageBase64,
+        imageName: imageNameLocal,
+        urgent,
+      };
 
       const res = await fetch(`${API_BASE}/api/createTask`, {
         method: "POST",
@@ -54,12 +59,13 @@ export default function Formulario({ onSuccess }) {
         throw new Error(`Respuesta del servidor no es JSON: ${text}`);
       }
 
-      if (!res.ok) throw new Error(data.error || "Error al enviar el formulario");
+      if (!res.ok)
+        throw new Error(data.error || "Error al enviar el formulario");
 
       // Limpiar formulario
       setDescription("");
       setImageFile(null);
-      setImagePreview(null);
+      //setImagePreview(null);
       setImageName("");
 
       // Pasar mensaje al componente padre
@@ -76,12 +82,15 @@ export default function Formulario({ onSuccess }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="w-full bg-white p-4 rounded-md shadow-md mx-auto">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full bg-white p-4 rounded-md shadow-md mx-auto"
+      >
         <div className="flex flex-col w-full">
           <textarea
             placeholder="Describe la incidencia..."
             value={description}
-            required 
+            required
             onChange={(e) => setDescription(e.target.value)}
             className="
               w-full
@@ -123,7 +132,8 @@ export default function Formulario({ onSuccess }) {
 
           {imageName && (
             <p className="text-xs text-gray-600 text-left mt-2">
-              Archivo seleccionado: <span className="font-medium">{imageName}</span>
+              Archivo seleccionado:{" "}
+              <span className="font-medium">{imageName}</span>
             </p>
           )}
 
@@ -147,10 +157,12 @@ export default function Formulario({ onSuccess }) {
             {loading ? "Enviando..." : "Enviar"}
           </button>
         </div>
-        {error && <p className="text-sm text-red-600 mt-2 text-center">Error: {error}</p>}
+        {error && (
+          <p className="text-sm text-red-600 mt-2 text-center">
+            Error: {error}
+          </p>
+        )}
       </form>
-
-      
     </>
   );
 }

@@ -3,13 +3,13 @@ import Formulario from "./components/Formulario.jsx";
 import { useState } from "react";
 
 function App() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [successMessage, setSuccessMessage] = useState("");
 
-  const handleOpen = () => {
+  /*const handleOpen = () => {
     setSuccessMessage(""); // limpiar mensaje antiguo
     setOpen(!open);
-  };
+  }; */
 
   return (
     <>
@@ -27,16 +27,18 @@ function App() {
 
       {/* Mensaje de éxito fuera del formulario */}
       {successMessage && (
-        <p className="success-message text-green-600 mt-2 text-right relative top-[240px]">{successMessage}</p>
+        <p className="success-message text-green-600 mt-2 text-right relative top-[240px]">
+          {successMessage}
+        </p>
       )}
 
-      {/* Botón flotante */}
+      {/* Botón flotante 
       <button
         onClick={handleOpen} // usar handleOpen en vez de setOpen directo
         className="focus:outline-none bottom-5 px-4 py-3 rounded-full bg-blue-600 text-white text-lg font-semibold flex items-center justify-center shadow-lg z-50"
       >
         {open ? "×" : "Reportar incidencia"}
-      </button>
+      </button>*/}
 
       <style>
         {`
