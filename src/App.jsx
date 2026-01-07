@@ -13,9 +13,9 @@ function App() {
 
   return (
     <>
-      {/* Formulario desplegable */}
+      {/* Formulario desplegable rounded-xl shadow-2xl*/}
       {open && (
-        <div className="widget-container bottom-24  overflow-auto bg-white rounded-xl shadow-2xl z-40 animate-fadeIn">
+        <div className="widget-container bottom-24  overflow-auto bg-white z-40 animate-fadeIn">
           <Formulario
             onSuccess={(message) => {
               setSuccessMessage(message); // Guardar mensaje de éxito
