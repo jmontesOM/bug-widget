@@ -83,7 +83,7 @@ export default async function handler(req, res) {
     if (!createTaskRes.ok) {
       const errorText = await createTaskRes.text();
       return res.status(createTaskRes.status).json({
-        error: "Error creando la tarea de Asana",
+        error: "Error creando el ticket en Asana",
         details: errorText,
       });
     }
@@ -110,7 +110,7 @@ export default async function handler(req, res) {
 
       if (!sectionRes.ok) {
         const errorText = await sectionRes.text();
-        sectionResult = { error: "Task created but error adding to section", details: errorText };
+        sectionResult = { error: "Ticket creado con éxito, error al añadir a sección.", details: errorText };
       } else {
         sectionResult = await sectionRes.json();
       }
@@ -119,7 +119,7 @@ export default async function handler(req, res) {
     // Sin imagen
     if (!imageBase64) {
       return res.status(200).json({
-        message: "Creada la tarea sin imagen",
+        message: "Ticket creado con éxito.",
         task,
         sectionResult,
       });
@@ -145,7 +145,7 @@ export default async function handler(req, res) {
     if (!attachRes.ok) {
       const errorText = await attachRes.text();
       return res.status(attachRes.status).json({
-        error: "Se ha creado la tarea pero ha ocurrido un error subiendo la imagen",
+        error: "Ticket creado con éxito.",
         details: errorText,
         task,
         sectionResult,
@@ -155,7 +155,7 @@ export default async function handler(req, res) {
     const attachData = await attachRes.json();
 
     return res.status(200).json({
-      message: "Su incidencia ha sido reportada",
+      message: "Su incidencia ha sido reportada.",
       task,
       sectionResult,
       attachment: attachData.data,
