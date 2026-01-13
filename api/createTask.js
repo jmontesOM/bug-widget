@@ -155,7 +155,7 @@ export default async function handler(req, res) {
     const attachData = await attachRes.json();
 
     return res.status(200).json({
-      message: "Su incidencia ha sido reportada.",
+      message: "Ticket creado con éxito.",
       task,
       sectionResult,
       attachment: attachData.data,
